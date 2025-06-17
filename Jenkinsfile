@@ -1,6 +1,12 @@
 pipeline {
 
-    agent any
+    agent {
+        any {
+            tools {
+                docker 'docker-latest'
+            }
+        }
+    }
 
     stages {
         stage('Build Spring Boot App') {
